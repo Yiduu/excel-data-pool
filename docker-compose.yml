@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./applicants.db:/app/applicants.db
+    environment:
+      - DATABASE_URL=sqlite:///applicants.db
